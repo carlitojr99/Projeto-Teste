@@ -1,0 +1,47 @@
+﻿@model LivroCaixaModelo
+@{
+ViewData["Title"] = "Novo Lançamento";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Cadastrar">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-floating mt-3">
+        <input asp-form="@Model.Data" class="form-control text-bold" required placeholder=" ">
+        <label class="form-label text-black">Data da transação</label>
+        <span asp-validation-for=@Model.Data class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mt-3">
+        <input asp-form="@Model.Descrição" class="form-control text-bold" required placeholder=" ">
+        <label class="form-label text-black">Descrição</label>
+        <span asp-validation-for=@Model.Descrição class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mt-3">
+        <input asp-form="@Model.Débito" class="form-control text-bold" required placeholder=" ">
+        <label class="form-label text-black">Débito</label>
+        <span asp-validation-for=@Model.Débito class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mt-3">
+        <input asp-form="@Model.Crédito" class="form-control text-bold" required placeholder=" ">
+        <label class="form-label text-black">Crédito</label>
+        <span asp-validation-for=@Model.Crédito class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mt-3">
+        <input asp-form="@Model.Valor" class="form-control text-bold" required placeholder=" ">
+        <label class="form-label text-black">Valor</label>
+        <span asp-validation-for=@Model.Valor class="text-danger"></span>
+    </div>
+
+    <div class="form-floating mt-3">
+        <a asp-action="Listagem" class="btn btn-outline-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-success">Salvar</button>
+    </div>
+
+</form>

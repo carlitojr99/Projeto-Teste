@@ -1,0 +1,44 @@
+﻿@model IEnumerable<LivroCaixaModelo>
+@{
+    ViewData["Title"] = "Relatório Livro Caixa";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+
+<a asp-action="Cadastrar" class="btn btn-outline-primary">Novo</a>
+
+<table class="table">
+    @* // Títulos das colunas *@
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Data</th>
+            <th>Descrição</th>
+            <th>Débito</th>
+            <th>Crédito</th>
+            <th>Valor</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+
+            <tr>
+                <td>@item.Id</td>
+            <td>@item.Data.ToString("dd/MM/yyyy")</td>
+            <td>@item.Descrição</td>
+            <td>@item.Débito</td>
+            <td>@item.Crédito</td>
+            <td>@item.Valor.ToString("C")</td>
+
+        
+        </tr>
+        }
+
+    </tbody>
+    
+</table>
