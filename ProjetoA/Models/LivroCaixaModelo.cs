@@ -9,5 +9,6 @@
         public string Crédito{ get; set; }
         public decimal Valor{ get; set; }
 
+
     }
 }
